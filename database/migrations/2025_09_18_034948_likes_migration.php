@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('likes', function (Blueprint $table) {
-            $table->uuid('id')->primary()->default(DB::raw('gen_random_uuid()'));
+            $table->uuid('id')->primary();
             $table->timestamp('created_at')->useCurrent();
             $table->uuid('user_id');
             $table->uuid('post_id');

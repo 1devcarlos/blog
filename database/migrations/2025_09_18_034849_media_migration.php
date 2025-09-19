@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('media', function (Blueprint $table) {
-            $table->uuid('id')->primary()->default(DB::raw('gen_random_uuid()'));
+            $table->uuid('id')->primary();
             $table->string('file_name', 255);
             $table->string('file_url', 500);
             $table->enum('file_type', ['image', 'video', 'document']);
